@@ -1,0 +1,73 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<!-- <img  src="/image/hotel.png"/>  -->
+<title>Register</title>
+</head>
+<body>
+	<div class="container">
+	<!-- <a href="">Already have an account?</a><a href="/login">Log in</a>
+	
+	<h1>Please register to book a room!</h1> -->
+	
+	
+		<div class="card">
+			<div class="box">
+				<div class="card-front">
+				<h2>Sign Up</h2>
+				 	<form:form action="/registration" method="post" modelAttribute="register">
+						<p>
+						<form:errors path="firstName"/>
+						<form:input path="firstName" class="input-box" placeholder="Enter Your First Name"  />
+						</p>
+						<p>
+						<form:errors path="lastName"/>
+						<form:input path="lastName" class="input-box" required="required" placeholder="Enter Your Last Name"/>
+						</p>
+						<p>
+						<form:errors path="age"/>
+						<form:input path="age" class="input-box" type="number" min="18" max="100" placeholder="Enter your age" required="required"/>
+						</p>
+						<p>
+						<form:errors path="email"/>
+						<form:input class="input-box" path="email" placeholder="Enter your email" required="required"/>
+						</p>
+						<p>
+						<form:errors path="password"/>
+						<form:input class="input-box" type="password" path="password" placeholder="Enter your password" required="required"/>
+						</p>
+						<p>
+						<form:errors path="password_confirmation"/>
+						<form:input class="input-box" type="password"  placeholder="Enter your password confirmation" path="password_confirmation" required="required"/>
+						</p>
+						<input class="button" type="submit" value="Register"/>
+					</form:form>
+				</div>
+				<div class="card-back">
+					<h2>Log In</h2>
+				 	<form action="/login" method="post" >
+						<p><c:out value="${error}"/></p>
+						<p>
+							<label >Email:</label>
+							<input name="email" placeholder="Enter your email" required/>
+						</p>
+						<p>
+							<label >Password:</label>
+							<input name="password" type="password" placeholder="Enter your email" required/>
+						</p>
+						<button class="btn">Sign In</button>
+					</form>
+					<button class="btn">I have an account</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

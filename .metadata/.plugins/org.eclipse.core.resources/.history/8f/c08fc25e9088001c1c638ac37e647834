@@ -1,0 +1,74 @@
+package com.coding.hotel.controllers;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.coding.hotel.models.Hotel;
+import com.coding.hotel.models.User;
+import com.coding.hotel.services.HotelService;
+import com.coding.hotel.services.UserService;
+
+@Controller
+public class HotelController {
+	
+	@Autowired
+	private HotelService hService;
+	
+	@Autowired
+	private UserService uService;
+	
+	@GetMapping("/")
+	public String home() {
+		return "/hotel/home.jsp";
+	}
+	
+	@GetMapping("/room")
+	public String room(@ModelAttribute("createARoom")Hotel hotel, HttpSession session, Model model) {
+		if(session.getAttribute("userId")!= null) {
+			User user=uService.findById((Long)session.getAttribute("userId"));
+			model.addAttribute("user", user);
+			return "/hotel/room.jsp";
+		}else {
+			return "redirect:/";
+		}
+	}
+	
+	@PostMapping("/create")
+	public String createRoom(@Valid @ModelAttribute("createARoom")Hotel hotel, BindingResult results,HttpSession session, @RequestParam ("id") Long id, Model model) {
+		if(results.hasErrors()) {
+			User user=uService.findById((Long)session.getAttribute("userId"));
+			model.addAttribute("user", user);
+			return "/hotel/room.jsp";
+		}
+		else {
+			return "redirect:/details/" + id;
+		}
+	}
+	
+	@GetMapping("/details/{id}")
+	public String details(@PathVariable("id") Long id) {
+		return "/hotel/details.jsp";
+	}
+	
+//	@GetMapping("/edit/{id}")
+//	public String edit(@ModelAttribute("Edit")Hotel hotel, @PathVariable("id") Long id) {
+//		return "/hotel/edit.jsp";
+//	}
+//	
+//	@PutMapping("/update/{id}")
+//	public String update(@ModelAttribute("Edit")Hotel hotel, @PathVariable("id") Long id) {
+//		return "redirect:/details/{id}";
+//	}
+
+
+}

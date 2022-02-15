@@ -1,0 +1,6 @@
+package com.coding.hotel.repositories;
+
+@Repository
+public interface UserRepository {
+
+}

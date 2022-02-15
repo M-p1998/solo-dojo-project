@@ -1,0 +1,15 @@
+INDEX VERSION 1.4+/Users/mya_p/Desktop/Project_and_algos/solo_project/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2535995569.index
+3753489713.index
+828185370.index
+4168332688.index
+2536857164.index
+1931676894.index
+2536857164.index
+2185871236.index
+2622240274.index
+1931676894.index
+2415840843.index
+1032973072.index
+104874406.index
+1762424564.index

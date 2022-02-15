@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Royal Galaxy Hotel</title>
+</head>
+<body>
+	<h1>Royal Galaxy Hotel</h1>
+	<a href="">Home</a> <a href="">About us</a> <a href="">Contact us</a>
+	
+	<a href="/registration"><button>Register</button></a>
+	<a href="/login"><button>Login</button></a>
+	
+</body>
+</html>

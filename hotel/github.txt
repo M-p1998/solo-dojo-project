@@ -1,0 +1,1 @@
+git remote add origin https://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@github.com/M-p1998/solo-dojo-project.git

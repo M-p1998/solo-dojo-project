@@ -1,0 +1,76 @@
+package com.coding.hotel.models;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PostPersist;
+import javax.persistence.PrePersist;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+@Table(name="user")
+public class User {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
+	private Long id;
+	
+	@NotBlank
+	@Size(min=3, max=25, message="First name is required")
+	private String firstName;
+	
+	@NotBlank
+	@Size(min=3, max=25, message="Last name is required")
+	private String lastName;
+	
+	@NotBlank
+	@Size(min=3, max=25, message="Age is required")
+	private String age;
+	
+	@NotBlank
+	private Long identification;
+	
+	@Email
+	private String gmail;
+	
+	@NotBlank
+	private Long phone_number;
+	
+	@NotBlank
+	@Size(min=5, max=300, message="Password is required")
+	private String password;
+	
+	@NotBlank
+	@Transient
+	private String password_confirmation;
+	
+	@Column(updatable =false)
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date createdAt;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date updatedAt;
+	
+	@PrePersist
+		protected void onCreate() {
+			this.createAt=new Date();
+	}
+	
+	@PostPersist
+		protected void onUpdate() {
+			this.updatedAt = new Date();
+	}
+	
+}

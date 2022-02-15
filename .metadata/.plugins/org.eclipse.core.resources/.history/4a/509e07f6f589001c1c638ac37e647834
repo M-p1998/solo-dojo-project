@@ -1,0 +1,75 @@
+ @charset "UTF-8"; 
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	width:"100%";
+	height: 100vh;
+	font-family:Helvetica;
+	background: rgb(175, 134, 225);
+	color: #fff;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card{
+	width:350px;
+	height:500px;
+	box-shadow: 0 0 40px 20px rgba(108 57 113);
+}
+
+.box{
+	position: relative;
+	width: 100;
+	height: 100%;
+}
+
+.card-front, .card-back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	/*background-image: linear-gradient(rgba(0,0,255,0.8), rgba(0,0,255,0)), url(/image/hotel.png);*/
+	background-image: linear-gradient(rgba(98, 10, 117), rgba(0,0,255,0)), url(/image/hotel.png);
+	padding: 55px;
+	box-sizing: border-box;
+	backface-visibility: hidden;
+	font-size: 30px;
+}
+
+.card-back{
+	transform: rotateY(180deg);
+}
+
+.card h2{
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 20px; 
+}
+
+.input-box{
+	width: 100%;
+	background: rgb(79, 50, 86);
+	border: 1px solid #180503;
+	margin: 6px 0;
+	height: 32 px;
+	border-radius: 100px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	text-align: center;
+	color: #fff;
+}
+
+
+
+
+
+
+

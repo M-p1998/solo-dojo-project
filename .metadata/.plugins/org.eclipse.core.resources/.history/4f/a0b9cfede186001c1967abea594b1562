@@ -1,0 +1,5 @@
+package com.coding.hotel.models;
+
+public class User {
+
+}

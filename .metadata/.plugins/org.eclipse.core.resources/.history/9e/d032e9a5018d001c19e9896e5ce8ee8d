@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	
+
+}
+
+body{
+	font-family: sans-serif;
+}
+
+#nav-bar{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	
+}
+
+.navbar{
+	background-image: linear-gradient(rgba(98, 10, 117),  rgba(0,0,255,0));
+	padding: 0!important;
+	background-color: orange;
+}
+
+.navbar-nav li{
+	padding: 0 10px;
+}
+
+.navbar-nav li a{
+	color: black;
+	font-weight: 600;
+	float: right;
+	text-align: left;
+}
+
+#nav-bar ul li a:hover{
+	color: orange !important;
+}
+
+.fa-bars{
+	color: #fff;
+	font-size: 30px !important;
+}
+
+.navbar-toggler{
+	outline: none !important;
+}
+
+/*-----about --------*/
+#about{
+	padding-top:50px;
+	padding-bottom: 50px;
+	color: #555;
+}
+
+#about .btn{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.about-content{
+	padding-top: 20px;
+	
+}
+
+/* --- services ----*/
+#services{
+	background-image: linear-gradient(rgba(98, 10, 117), rgba(0,0,255,0)), url(/image/backimage.jpg);
+	background-size: cover;
+	background-position: center;
+	color: black !important;
+	background-attachment: fixed;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#services h1{
+	text-align: center;
+	color: black !important;
+	padding-bottom: 10px;
+}
+
+#services h1::after{
+	content: '';
+	background: #efefef;
+	display: block;
+	height: 3px;
+	width: 170px;
+	margin: 20px auto 5px;
+}
+
+.services{
+	margin-top: 40px;
+}
+
+.icon{
+	font-size: 40px;
+	margin: 20px auto;
+	padding: 20px;
+	height: 80px;
+	width: 80px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+}
+
+#services p{
+	font-size: 14px;
+	margin-top: 20px;
+	color: black solid;
+	
+}
+.services .col-md-3:hover{
+	background: pink;
+	cursor: pointer;
+	transition: 0.7s;
+}
+
+#reviews{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	
+}
+
+#reviews h1{
+	text-align: center;
+	
+}
+#reviews h1::after{
+	content: '';
+	background: Black;
+	display: block;
+	height: 3px;
+	width: 170px;
+	margin: 20px auto 5px;
+}
+
+#reviews .row{
+	margin-top: 30px;
+	
+}
+
+.col-md-4{
+	margin: 40px auto;
+}
+
+.profile{
+	padding: 40px 10px 10px;
+	background-color: #efefef;
+}
+.profile h3{
+	font-size: 20px;
+	margin-top: 15px;
+	color: orange;
+}
+
+#reviews span{
+	font-size: 12px;
+	color: #333; 
+}
+
+
+/* .skills-bar p{
+	margin-bottom: 6px;
+	font-weight: 600;
+}
+
+.progress-bar{
+	border-radius: 16px;
+	
+}
+.progress{
+	border-radius: 16px !important;
+	margin-bottom: 20px;
+} */
+/*--------------*/
+/* #slider{
+	width: 100%;
+} */
+/* .carousel-caption{
+	top: 50%;
+	transform: translateY(-50%);
+	bottom: initial!important;
+} */
+

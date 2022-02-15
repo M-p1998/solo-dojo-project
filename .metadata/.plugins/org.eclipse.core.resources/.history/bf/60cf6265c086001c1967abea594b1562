@@ -1,0 +1,5 @@
+package com.coding.hotel.controllers;
+
+public class UserController {
+
+}

@@ -1,0 +1,39 @@
+package com.coding.hotel.controllers;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.coding.hotel.models.User;
+
+@Controller
+public class UserController {
+	
+	@GetMapping("/registration")
+	public String register(@ModelAttribute("register") User user) {
+		return "/user/registration.jsp";
+	}
+	
+	@PostMapping("/register")
+	public String registerUser(@Valid @ModelAttribute("register") User user, BindingResult results, HttpSession session) {
+		if(results.hasErrors()) {
+			return "registration.jsp";
+		}else {
+			return "redirect:/room";
+		}
+		
+	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "/user/login.jsp";
+	}
+	
+	
+
+}

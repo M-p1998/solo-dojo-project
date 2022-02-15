@@ -1,0 +1,59 @@
+package com.coding.hotel.controllers;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import com.coding.hotel.models.Hotel;
+import com.coding.hotel.services.HotelService;
+
+@Controller
+public class HotelController {
+	
+	@Autowired
+	private HotelService hService;
+	@GetMapping("/")
+	public String home() {
+		return "/hotel/home.jsp";
+	}
+	
+	@GetMapping("/room")
+	public String room(@ModelAttribute("createARoom")Hotel hotel) {
+		return "/hotel/room.jsp";
+	}
+	
+	@PostMapping("/createroom")
+	public String createRoom(@Valid @ModelAttribute("createARoom")Hotel hotel, BindingResult results, Model model) {
+		if(results.hasErrors()) {
+			return "/hotel/room.jsp";
+		}
+		else {
+			return "redirect:/details/{id}";
+		}
+	}
+	
+	@GetMapping("/details/{id}")
+	public String details(@PathVariable("id") Long id) {
+		return "/hotel/details.jsp";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String edit(@ModelAttribute("Edit")Hotel hotel, @PathVariable("id") Long id) {
+		return "/hotel/edit.jsp";
+	}
+	
+	@PutMapping("/update/{id}")
+	public String update(@ModelAttribute("Edit")Hotel hotel, @PathVariable("id") Long id) {
+		return "redirect:/details/{id}";
+	}
+
+
+}

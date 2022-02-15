@@ -1,0 +1,149 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="/css/home.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Hotel Glow</title>
+</head>
+<body>
+	<!-- <div class="content">
+		<div class="images">
+			<img src="/image/img3.png">
+			<img src="/image/img2.png">
+			<img src="/image/img4.png">
+		</div>
+		<div onclick="side_slide(-1)" class="slide left">
+			<span class="fa fa-angle-left"></span>
+		</div>
+		<div onclick="side_slide(1)" class="slide right">
+			<span class="fa fa-angle-right"></span>
+		</div> 
+	</div> -->
+
+	<section id="nav-bar">
+		
+		<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="/image/hotelLogo.png" width="200" height="50"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <i class="fa-solid fa-bars"></i> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active ">
+          <a class="nav-link" href="#" href="#">Hotel Overview</a>
+        </li>
+        <li class="nav-item active ">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link ">About us</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link ">Reviews</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link ">Contact us</a>
+        </li>
+         <li class="nav-item active">
+          <a class="nav-link ">Sign in/Sign up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+	</section>
+	
+	<section id="banner">
+		<div class="container">
+		<div class="row">
+		<div class="col-md-6">
+		<p> the hotel </p>
+		<p> the hotelfafdfeasfearewrewr </p>
+		<div class="content">
+		<div class="images">
+			<img src="/image/img3.png" width="1000" height="500">
+			<img src="/image/img2.png" width="1000" height="500">
+			<img src="/image/img4.png" width="1000" height="500">
+		
+		<!-- <div onclick="side_slide(-1)" class="slide left">
+			<span class="fa fa-angle-left"></span>
+		</div>
+		<div onclick="side_slide(1)" class="slide right">
+			<span class="fa fa-angle-right"></span>
+		</div>  -->
+		</div> 
+		</div>
+		</div>
+		</div>
+		</div>
+		<!-- </div> -->
+	</section>
+
+	
+	<!-- <header class="header">
+		<div class="container">
+			<nav class="nav">
+				<a href="/hotel/home.jsp" class="logo">
+					<img src=/image/img4.png />
+					<img src=/image/img2.png />
+				</a>
+				<div class="menu">
+					<i class="bars"></i>
+					<i class="times"></i>
+				</div>
+				
+				<ul class="nav-list">
+					<li class="nav-item">
+						<a href="/hotel/home.jsp" class="nav-link">Hotel overview</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link">Spa</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link">Golf & Activities</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link">Weddings</a>
+					</li>
+					
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+	<main>
+		<div class="hero">
+			<div class="container">
+				<div class="main-heading">
+					<h1 class="title">Galaxy Hotel</h1>
+					<h1 class="title">Luxury Hotel</h1>
+				</div>
+				<a href="#" class="btn btn-gradient">Explore now
+				<span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+				</a>
+				
+			</div>
+		
+		</div>
+	</main> -->
+	<!-- <h1>Royal Galaxy Hotel</h1> <h3>5 stars</h3>
+	<a href="">Home</a> <a href="">About us</a> <a href="">Contact us</a>
+	
+	<a href="/registration"><button>Register</button></a>
+	<a href="/login"><button>Login</button></a>
+	
+	<a href="/reviews"><button>Write a review</button></a>
+	<a href="/reviews">View all reviews</a>-->
+	
+	<!-- <script src="/js/main.js"></script>  -->
+</body>
+</html>

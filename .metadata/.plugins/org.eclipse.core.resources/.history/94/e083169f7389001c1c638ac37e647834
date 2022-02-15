@@ -1,0 +1,5 @@
+package com.coding.hotel.validators;
+
+public class UserValidator {
+
+}

@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: sans-serif;
+}
+
+#nav-bar{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	
+}
+
+.navbar{
+	background-image: linear-gradient(rgba(98, 10, 117),  rgba(0,0,255,0));
+	padding: 0!important;
+	background-color: orange;
+}
+
+.navbar-nav li{
+	padding: 0 10px;
+}
+
+.navbar-nav li a{
+	color: black;
+	font-weight: 600;
+	float: right;
+	text-align: left;
+}
+
+#nav-bar ul li a:hover{
+	color: orange !important;
+}
+
+.fa-bars{
+	color: #fff;
+	font-size: 30px !important;
+}
+
+.navbar-toggler{
+	outline: none !important;
+}
+
+/* -----------room------------ */
+.container{
+	/* width:"100%";*/
+	height: 100vh; 
+	width: 100%;
+	max-width: 150rem;
+	font-family:Helvetica;
+	background: rgb(175, 134, 225);
+	color: #fff;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card{
+	width:400px;
+	height:700px;
+	box-shadow: 0 0 40px 20px rgba(108 57 113);
+	perspective: 1000px;
+}
+
+.box{
+	position: relative;
+	width: 100;
+	height: 100%;
+	transition: transform 1s;
+	transform-style: preserve-3d; 
+}
+
+.card-front{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-image: linear-gradient(rgba(98, 10, 117), rgba(0,0,255,0)), url(/image/hotel.png);
+	padding: 55px;
+	box-sizing: border-box;
+	backface-visibility: hidden;
+	font-size: 30px;
+}
+
+.input-box{
+	width: 100%;
+	background: rgb(79, 50, 86);
+	border: 1px solid #180503;
+	margin: 6px 0;
+	height: 32 px;
+	border-radius: 100px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	text-align: center;
+	color: #fff;
+
+}
+
+.btn{
+	width: 100%;
+	background: rgb(79, 50, 86);
+	border: 1px solid #180503;
+	margin: 35px 0 10px;
+	height: 32px;
+	font-size: 12px;
+	border-radius: 100px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	color: #fff;
+	cursor: pointer;
+}
+.title{
+	color: #fff;
+	font-size: 20px;
+}
+
+.error{
+	font-size: 20px;
+	color: black;
+	text-align: center;
+}
+
+
+

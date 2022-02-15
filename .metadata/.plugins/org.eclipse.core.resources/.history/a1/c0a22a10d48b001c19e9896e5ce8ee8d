@@ -1,0 +1,297 @@
+ @charset "UTF-8"; 
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	/* width:"100%";*/
+	height: 100vh; 
+	width: 100%;
+	max-width: 150rem;
+	font-family:Helvetica;
+	background: rgb(175, 134, 225);
+	color: #fff;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card{
+	width:400px;
+	height:700px;
+	box-shadow: 0 0 40px 20px rgba(108 57 113);
+	perspective: 1000px;
+}
+
+.box{
+	position: relative;
+	width: 100;
+	height: 100%;
+	transition: transform 1s;
+	transform-style: preserve-3d; 
+}
+
+.card-front, .card-back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-image: linear-gradient(rgba(98, 10, 117), rgba(0,0,255,0)), url(/image/hotel.png);
+	padding: 55px;
+	box-sizing: border-box;
+	backface-visibility: hidden;
+	font-size: 30px;
+}
+
+.card-back{
+	transform: rotateY(180deg);
+}
+
+.card h2{
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 20px; 
+}
+
+.input-box{
+	width: 100%;
+	background: rgb(79, 50, 86);
+	border: 1px solid #180503;
+	margin: 6px 0;
+	height: 32 px;
+	border-radius: 100px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	text-align: center;
+	color: #fff;
+}
+
+.btn{
+	width: 100%;
+	background: rgb(79, 50, 86);
+	border: 1px solid #180503;
+	margin: 35px 0 10px;
+	height: 32px;
+	font-size: 12px;
+	border-radius: 100px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	outline: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+::placeholder{
+	color: #fff;
+	font-size: 12px;
+}
+
+.card .btn{
+	margin-top: 20px;
+}
+
+.card a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	font-size: 13px;
+	margin-top: 8px;
+	
+}
+
+.error{
+	font-size: 15px;
+	color: rgb(226, 103, 6);
+	text-align: center;
+}
+.valid{
+	font-size: 15px;
+	color: rgb(226, 103, 6);
+	text-align: center;
+}
+/* ********************** */
+
+/* *,
+*::before,
+*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root{
+	--dark-color: #2d2c2c;
+	--purple-solid: #350a4f;
+	--purple-transparent: rgba(98, 10, 117;
+	--purple-transparent-alt: rgba(98, 10, 117;
+	--purple-light: #8f50fb;
+	--yellow-solid: #fa9e2c;
+	--gradient-color: linear-gradient(to right, var(--yellow-solid), var(--purple-light));
+	--gradient-color-alt: linear-gradient(to right, var(--purple-light), var(--yellow-solid));
+}
+
+html{
+	font-size: 10px;
+}
+
+body{
+	font-family:'Open Sans', sans-serif;
+	font-size: 1.6rem;
+	color: var(--dark-color);
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+ul{
+	list-style: none;
+}
+
+section{
+	padding: 5rem 0;
+}
+.container{
+	width: 100%;
+	max-width: 120rem;
+	padding: 0 1.5rem;
+	margin: 0 auto;
+}
+header
+.header{
+	width: 100%;
+	height: 6rem;
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: var(--purple-transparent);
+	z-index: 999;
+}
+
+nav
+.nav{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo img{
+	max-width: 80%
+}
+
+.menu{
+	font-size: 2.6rem;
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	z-index: 1500;
+}
+
+.menu.times{
+	display: none;
+}
+
+.nav-list{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgb(175, 134, 225);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 1400;
+	opacity:0;
+	transform: scale(0);
+}
+.menu-open .nav-list{
+	opacity: 1;
+	transform: scale(1);
+}
+
+.nav-link{
+	display: block;
+	color: #fff;
+	font-size: 3rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 1rem;
+}
+
+.nav-item:not(:last-child){
+	margin-bottom: .5rem;
+} */
+
+/* .hero{
+	width: 100%;
+	height: 100vh;
+	background: url("/image/img4.png") center no repeat;
+	background-size: cover;
+} */
+
+/* arrow images */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	}
+
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	text-align: center;
+}
+.content{
+	height: 300px;
+	width: 700px;
+	overflow: hidden; 
+	position: relative;
+	
+}
+
+.content .images{
+	height: 100%;
+	width: 100%;
+}
+
+.images img{
+	height: 100%;
+	width: 100%;
+}
+
+.content .slide{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border: 2px solid black;
+	height: 45px;
+	width: 45px;
+	cursor: pointer;
+}
+
+.content .slide:hover{
+	background: solid white;
+}
+.slide span{
+	font-size: 35px;
+	color: black;
+	line-height: 41px;
+}
+.content .right {
+	right: 0;
+}
+
+

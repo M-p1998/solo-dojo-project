@@ -1,0 +1,28 @@
+package com.coding.hotel.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.coding.hotel.models.Hotel;
+
+@Controller
+public class HotelController {
+	
+	@GetMapping("/")
+	public String home() {
+		return "/hotel/home.jsp";
+	}
+	
+	@GetMapping("/room")
+	public String room(@ModelAttribute("createARoom")Hotel hotel) {
+		return "/hotel/room.jsp";
+	}
+	
+	@PostMapping("/room")
+	public String create(@ModelAttribute("createARoom")Hotel hotel) {
+		return "/hotel/room.jsp";
+	}
+
+}

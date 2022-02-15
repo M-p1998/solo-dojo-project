@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+</head>
+<body>
+	<a href="">Already have an account?</a><a href="/login">Log in</a>
+	
+	<h1>Please register to book a room!</h1>
+	<form:form action="" method="" modelAttribute="">
+	<p>
+		<form:label path="">First Name:</form:label>
+		<form:errors path=""/>
+		<form:input path=""/>
+	</p>
+	<p>
+		<form:label path="">Last Name:</form:label>
+		<form:errors path=""/>
+		<form:input path=""/>
+	</p>
+	<p>
+		<form:label path="">Age:</form:label>
+		<form:errors path=""/>
+		<form:input path=""/>
+	</p>
+	<p>
+		<form:label path="">ID:</form:label>
+		<form:errors path=""/>
+		<form:input path=""/>
+	</p>
+	<p>
+		<form:label path="">Gmail:</form:label>
+		<form:errors path=""/>
+		<form:input path=""/>
+	</p>
+	<p>
+		<form:label path="">Phone number:</form:label>
+		<form:errors path=""/>
+		<form:input path=""/>
+	</p>
+	<p>
+		<form:label path="">Password:</form:label>
+		<form:errors path=""/>
+		<form:input path=""/>
+	</p>
+	<p>
+		<form:label path="">Password Confirmation:</form:label>
+		<form:errors path=""/>
+		<form:input path=""/>
+	</p>
+	<input type="submit" value="Register"/>
+	</form:form>
+</body>
+</html>
