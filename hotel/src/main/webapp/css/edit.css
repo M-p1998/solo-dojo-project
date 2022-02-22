@@ -10,7 +10,7 @@ body{
 }
 
 
-/* #nav-bar{
+#nav-bar{
 	position: sticky;
 	top: 0;
 	z-index: 10;
@@ -47,44 +47,8 @@ body{
 
 .navbar-toggler{
 	outline: none !important;
-} */
-
-
-.logo{
-	cursor: pointer;
-	/* margin-right: auto; */
 }
 
-header{
-	height: 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 30px 10%;
-	background-color: orange;
-	background-image: linear-gradient(rgba(98, 10, 117),  rgba(0,0,255,0));
-}
-.nav_links{
-	list-style: none;
-}
-
-.nav_links li{
-	display: inline-block;
-	padding: 0px 20px;
-	/* justify-content: flex-end; */
-}
-
-.nav_links li a{
-	transition: all 0.3s ease 0s;
-	color: black;
-	font-weight: 600;
-}
-
-.nav_links li a:hover{
-	color: orange !important;
-}
-
-/* -----------room------------ */
 .container{
 	/* width:"100%";*/
 	height: 100vh; 
@@ -98,7 +62,7 @@ header{
 	justify-content: center;
 }
 
-h1{
+h3{
 	font-size: 30px;
 	text-align: center;
 }
@@ -117,32 +81,10 @@ h1{
 	transform-style: preserve-3d; 
 }
 
-.card-front{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-position: center;
-	background-size: cover;
-	background-image: linear-gradient(rgba(98, 10, 117), rgba(0,0,255,0)), url(/image/hotel.png);
-	padding: 55px;
-	box-sizing: border-box;
-	backface-visibility: hidden;
-	font-size: 30px;
-}
-
-.input-box{
-	width: 100%;
-	background: rgb(79, 50, 86);
-	border: 1px solid #180503;
-	margin: 6px 0;
-	height: 32 px;
-	border-radius: 100px;
-	padding: 0 10px;
-	box-sizing: border-box;
-	outline: none;
+.error{
+	font-size: 20px;
+	color: black;
 	text-align: center;
-	color: #fff;
-
 }
 
 .btn{
@@ -159,16 +101,4 @@ h1{
 	color: #fff;
 	cursor: pointer;
 }
-.title{
-	color: #fff;
-	font-size: 20px;
-}
-
-.error{
-	font-size: 20px;
-	color: blue;
-	text-align: center;
-}
-
-
 

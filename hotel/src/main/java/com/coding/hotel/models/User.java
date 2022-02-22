@@ -9,6 +9,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
@@ -51,12 +54,28 @@ public class User {
 	@Transient
 	private String password_confirmation;
 	
-	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
-	private List <Hotel> rooms;
 	
-	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
-	private List <Review> reviews;
+	@OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    private List<Hotel> rooms;
+
 	
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "user_room", 
+            joinColumns = @JoinColumn(name = "user_id"), 
+            inverseJoinColumns = @JoinColumn(name = "room_id")
+        )
+     private List<Hotel> manyRoom;
+
+
+	public List<Hotel> getManyRoom() {
+		return manyRoom;
+	}
+
+	public void setManyRoom(List<Hotel> manyRoom) {
+		this.manyRoom = manyRoom;
+	}
+
 	public List<Hotel> getRooms() {
 		return rooms;
 	}
@@ -64,15 +83,6 @@ public class User {
 	public void setRooms(List<Hotel> rooms) {
 		this.rooms = rooms;
 	}
-	
-	public List<Review> getReviews() {
-		return reviews;
-	}
-
-	public void setReviews(List<Review> reviews) {
-		this.reviews = reviews;
-	}
-	
 
 	@Column(updatable =false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")

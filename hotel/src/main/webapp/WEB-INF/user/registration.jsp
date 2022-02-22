@@ -12,36 +12,26 @@
 </head>
 <body>
 
-<section id="nav-bar">
-		<nav class="navbar navbar-expand-lg navbar-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#"><img src="/image/hotelLogo.png"
-					width="200" height="50"></a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<i class="fa-solid fa-bars"></i>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active "><a class="nav-link" 
-							href="#">Hotel Overview</a></li>
-						<li class="nav-item active "><a class="nav-link" href="#services">Services</a>
-						</li>
-						<li class="nav-item active"><a class="nav-link" href="#about">About us</a>
-						</li>
-						<li class="nav-item active"><a class="nav-link" href="#reviews">Reviews</a>
-						</li>
-						<li class="nav-item active"><a class="nav-link" href="#contact">Contact Us</a></li>
-						<li class="nav-item active"><a class="nav-link" href="">My Account</a></li>
-						<li class="nav-item active"><a class="nav-link" href="/logout">Log Out</a></li>
+
+			<header>
+				<img class="logo" src="/image/hotelLogo.png"
+					width="200" height="50">
+				
+				<!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+					<nav>
+					<ul class="nav_links">
+						<li class="nav-item active "><a  
+							href="/">Hotel Overview</a></li>
+						
 				
 					</ul>
-				</div>
+					</nav>
+			</header>
+				<!-- </div>
 			</div>
-		</nav>
-	</section>
+		</nav> -->
+	<!-- </section> -->
+	
 	<div class="container">
 		<div class="card">
 			<div class="box" id="card">

@@ -1,4 +1,5 @@
  @charset "UTF-8"; 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
 *{
 	margin: 0;
@@ -9,7 +10,7 @@ body{
 	font-family: sans-serif;
 }
 
-#nav-bar{
+/* #nav-bar{
 	position: sticky;
 	top: 0;
 	z-index: 10;
@@ -20,13 +21,14 @@ body{
 	background-image: linear-gradient(rgba(98, 10, 117),  rgba(0,0,255,0));
 	padding: 0!important;
 	background-color: orange;
+	
 }
 
 .navbar-nav li{
 	padding: 0 10px;
 	display: inline-block;
 	justify-content: flex-end;
-	margin: left;
+	
 	position:right;
 }
 
@@ -49,7 +51,41 @@ body{
 .navbar-toggler{
 	outline: none !important;
 }
+ */
+/* ------------*/
+.logo{
+	cursor: pointer;
+	/* margin-right: auto; */
+}
 
+header{
+	height: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 10%;
+	background-color: orange;
+	background-image: linear-gradient(rgba(98, 10, 117),  rgba(0,0,255,0));
+}
+.nav_links{
+	list-style: none;
+}
+
+.nav_links li{
+	display: inline-block;
+	padding: 0px 20px;
+	/* justify-content: flex-end; */
+}
+
+.nav_links li a{
+	transition: all 0.3s ease 0s;
+	color: black;
+	font-weight: 600;
+}
+
+.nav_links li a:hover{
+	color: orange !important;
+}
 
 .container{
 	/* width:"100%";*/
@@ -153,12 +189,12 @@ body{
 
 .error{
 	font-size: 15px;
-	color: black;
+	color: blue;
 	text-align: center;
 }
 .valid{
 	font-size: 15px;
-	color: rgb(226, 103, 6);
+	color: blue;
 	text-align: center;
 }
 /* ********************** */

@@ -1,6 +1,7 @@
 package com.coding.hotel.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,12 +10,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.validation.constraints.Future;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -44,14 +46,29 @@ public class Hotel {
 	@JoinColumn(name="user_id")
 	private User user;
 	
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "user_room", 
+        joinColumns = @JoinColumn(name = "room_id"), 
+        inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private List<User> manyUser;
+
+	
+	public List<User> getManyUser() {
+		return manyUser;
+	}
+	public void setManyUser(List<User> manyUser) {
+		this.manyUser = manyUser;
+	}
+	public Long getId() {
+		return id;
+	}
 	public User getUser() {
 		return user;
 	}
 	public void setUser(User user) {
 		this.user = user;
-	}
-	public Long getId() {
-		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;

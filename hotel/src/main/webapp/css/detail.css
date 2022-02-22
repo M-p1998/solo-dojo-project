@@ -1,0 +1,155 @@
+@charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: sans-serif;
+	margin: 0px;
+	/* width: 0vh; */
+	height: 100vh; 
+	background: rgb(175, 134, 225);
+	
+}
+
+.logo{
+	cursor: pointer;
+	/* margin-right: auto; */
+}
+
+header{
+	height: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 10%;
+	background-color: orange;
+	background-image: linear-gradient(rgba(98, 10, 117),  rgba(0,0,255,0));
+}
+.nav_links{
+	list-style: none;
+}
+
+.nav_links li{
+	display: inline-block;
+	padding: 0px 20px;
+	/* justify-content: flex-end; */
+}
+
+.nav_links li a{
+	transition: all 0.3s ease 0s;
+	color: black;
+	font-weight: 600;
+}
+
+.nav_links li a:hover{
+	color: orange !important;
+}
+
+.cta{
+	background-color: orange;
+	border: 5px;
+	border-radius: 50px;
+	height: 30px;
+	width: 50px;
+	/* border-radius: 3px; */
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+
+.b{
+	background-color: red;
+	border: 5px;
+	border-radius: 50px;
+	height: 30px;
+	width: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+
+h2{
+	margin: 0px;
+	font-size: 25px;
+	text-align: center;
+	padding: 20px;
+}
+
+.content{
+	height: 100vh; 
+	width: 100%;
+	padding: 20px;
+	/* margin: 0px auto; */
+	/* max-width: 150rem; */
+	position: relative;
+	font-family:Helvetica;
+	
+}
+
+.bottom{
+	text-align: center;
+	padding-left: 36%;
+	/* align-items: center; */
+	
+	
+}
+
+.carousel-container{
+	width: 30%;
+	margin: auto;
+	border: 2px solid orange;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+}
+
+.carousel-slide{
+	display: flex;
+	width: 100%;
+	height: 500px;
+}
+
+#prevBtn{
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	left: 5%;
+	font-size: 30px;
+	color: white;
+
+	cursor: pointer;
+}
+
+#nextBtn{
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	right: 5%;
+	font-size: 30px;
+	color: white;
+	cursor: pointer;
+}
+
+
+.follow{
+	background: #6F0580;
+	width: 500px;
+	padding: 10px;
+	margin: 15px;
+	/* text-align: center; */
+	justify-content: center;
+	
+	
+}
+.btn{
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	margin: 0px;
+	font-size: 25px;
+	text-align: center;
+	
+}
+
+

@@ -4,12 +4,11 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
@@ -27,13 +26,9 @@ public class Review {
 	
 	private Long id;
 	
-	@NotBlank(message="This field is required")
-	@Size(min=5, max=300, message="To submit your review, please explain your rating to others.")
+	@NotBlank(message="This field is required to submit your review.")
+	@Size(min=5, max=1000, message="")
 	private String reviews;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="user_id")
-	private User user;
 
 	public Long getId() {
 		return id;
@@ -43,13 +38,6 @@ public class Review {
 		this.id = id;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
 
 	public String getReviews() {
 		return reviews;

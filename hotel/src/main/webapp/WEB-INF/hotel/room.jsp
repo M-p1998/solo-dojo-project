@@ -11,38 +11,18 @@
 </head>
 <body>
 
-<section id="nav-bar">
-		<nav class="navbar navbar-expand-lg navbar-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#"><img src="/image/hotelLogo.png"
-					width="200" height="50"></a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<i class="fa-solid fa-bars"></i>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active "><a class="nav-link" 
-							href="#">Hotel Overview</a></li>
-						<li class="nav-item active "><a class="nav-link" href="#services">Services</a>
-						</li>
-						<li class="nav-item active"><a class="nav-link" href="#about">About us</a>
-						</li>
-						<li class="nav-item active"><a class="nav-link" href="#reviews">Reviews</a>
-						</li>
-						<li class="nav-item active"><a class="nav-link" href="#contact">Contact Us</a></li>
-						<li class="nav-item active"><a class="nav-link" href="">My Account</a></li>
-						<li class="nav-item active"><a class="nav-link" href="/logout">Log Out</a></li>
-						<li class="nav-item active"><a class="nav-link" href="/registration">Sign
-								in/Sign up</a></li>
+
+		<header>
+				<img class="logo" src="/image/hotelLogo.png"
+					width="200" height="50">
 				
+					<nav>
+					<ul class="nav_links">
+						<li class="nav-item active "><a  href="/">Hotel Overview</a></li>
+						<li class="nav-item active "><a  href="/logout">Log out</a></li>
 					</ul>
-				</div>
-			</div>
-		</nav>
-	</section>
+					</nav>
+			</header>
 	
 	<div class="container">
 		<div class="card">
@@ -55,12 +35,11 @@
 						<form:label path="room_type" class="title" >Room type:</form:label>
 						<form:errors path="room_type" class="error"/>
 						<form:select path="room_type" class="input-box" >
-								<option class="title">Queen</option>
-								<option class="title">Double</option>
-								<option class="title">Triple</option>
-								<option class="title">Single</option>
-								<option class="title">King</option>
-								<option class="title">Studio</option>
+								
+								<option class="title">One Bedroom suite</option>
+								<option class="title">Presidential suite</option>
+								<option class="title">Luxury suite</option>
+								<option class="title">Signature suite</option>
 								<option class="title">Master suite </option>
 						</form:select>
 						

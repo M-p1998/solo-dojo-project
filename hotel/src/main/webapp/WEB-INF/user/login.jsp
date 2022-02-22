@@ -10,7 +10,7 @@
 <title>Log in</title>
 </head>
 <body>
-	
+	<!-- 
 	<section id="nav-bar">
 		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container-fluid">
@@ -40,7 +40,22 @@
 				</div>
 			</div>
 		</nav>
-	</section>
+	</section> -->
+	
+	<header>
+				<img class="logo" src="/image/hotelLogo.png"
+					width="200" height="50">
+				
+				<!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+					<nav>
+					<ul class="nav_links">
+						<li class="nav-item active "><a  
+							href="/">Hotel Overview</a></li>
+						
+				
+					</ul>
+					</nav>
+			</header>
 	
 	<div class="container">
 		<div class="card">
@@ -57,15 +72,29 @@
 						</p>
 						<button class="btn">Submit</button>
 					</form>
-					<!-- <button class="btn" onclick="openLogin()">I am new here</button> -->
-					<button class="btn" onclick="openLogin()">I am new here</button>
+					
+					<c:choose>
+						<c:when test="${!login}">
+						<button class="btn" onclick="openLogin()">I am new here</button>
+						</c:when>
+						<c:otherwise>
+			
+						<a class = "btn" href="/registration">I am new here</a>
+						</c:otherwise>
+					</c:choose>
+					<%-- <c:if test="${!error}">
+						<button class="btn" onclick="openLogin()">I am new here</button>
+					</c:if>
+					<c:if test="${error}">
+						<a class = "btn" href="/registration">I am new here</a>
+					</c:if> --%>
 				</div>
 			</div>
 		</div>
 	</div>
 	
 				
-			<script>
+	<script>
 		var card = document.getElementById("card");
 			function openRegister(){
 				card.style.transform = "rotateY(-180deg)";

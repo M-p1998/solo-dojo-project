@@ -23,106 +23,114 @@ import com.coding.hotel.services.UserService;
 
 @Controller
 public class HotelController {
-	
+
 	@Autowired
 	private HotelService hService;
-	
+
 	@Autowired
 	private UserService uService;
-	
+
 	@Autowired
 	private ReviewService rService;
-	
+
 	@GetMapping("/")
-	public String home(Model model) {
-		model.addAttribute("writeReview", rService.getAll());
+	public String home(@ModelAttribute("PostAReview") Review review, Model model) {
+		model.addAttribute("write", rService.getAll());
 		return "/hotel/home.jsp";
 	}
-	
+
 	@GetMapping("/room")
-	public String room(@ModelAttribute("createARoom")Hotel hotel, HttpSession session, Model model) {
-		if(session.getAttribute("userId")!= null) {
-			
-			User user=uService.findById((Long)session.getAttribute("userId"));
+	public String room(@ModelAttribute("createARoom") Hotel hotel, HttpSession session, Model model) {
+		if (session.getAttribute("userId") != null) {
+
+			User user = uService.findById((Long) session.getAttribute("userId"));
 			model.addAttribute("user", user);
 			return "/hotel/room.jsp";
-		}else {
+		} else {
 			return "redirect:/";
-			
+
 		}
-		
+
 	}
-	
+
 	@PostMapping("/create")
-	public String createRoom(@Valid @ModelAttribute("createARoom")Hotel hotel, BindingResult results,HttpSession session,  Model model) {
-		if(results.hasErrors()) {
-			User user=uService.findById((Long)session.getAttribute("userId"));
+	public String createRoom(@Valid @ModelAttribute("createARoom") Hotel hotel, BindingResult results,
+			HttpSession session, Model model) {
+		if (results.hasErrors()) {
+			User user = uService.findById((Long) session.getAttribute("userId"));
 			model.addAttribute("user", user);
 			return "/hotel/room.jsp";
-		}
-		else {
-			hService.createARoom(hotel);
-			return "redirect:/details/" + (Long)session.getAttribute("userId");
+		} else {
+			Hotel newHotel = hService.createARoom(hotel);
+			return "redirect:/details/" + newHotel.getId();
 		}
 	}
-	
+
 	@GetMapping("/details/{id}")
 	public String details(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("One", hService.getOne(id));
 		model.addAttribute("GetUser", uService.findById(id));
 		return "/user/details.jsp";
 	}
-	
+
 	@GetMapping("/edit/{id}")
-	public String edit(@ModelAttribute("Edit")Hotel hotel, @PathVariable("id") Long id, Model model) {
+	public String edit( @ModelAttribute("Edit") Hotel hotel, @PathVariable("id") Long id, Model model) {
+
 		model.addAttribute("EditOne", hService.getOne(id));
+
 		model.addAttribute("GetUser", uService.findById(id));
+//		model.addAttribute("One", hService.getOne(id));
 		return "/hotel/edit.jsp";
 	}
-	
+
 	@PutMapping("/update/{id}")
-	public String update(@Valid @ModelAttribute("Edit")Hotel hotel,BindingResult results, @PathVariable("id") Long id, Model model) {
-		if(results.hasErrors()) {
+	public String update(@Valid @ModelAttribute("Edit") Hotel hotel, BindingResult results, @PathVariable("id") Long id,
+			Model model) {
+		if (results.hasErrors()) {
 			model.addAttribute("EditOne", hService.getOne(id));
 			return "/hotel/edit.jsp";
-		}else {
+		} else {
 			model.addAttribute("update", hService.update(hotel));
+			model.addAttribute("One", hService.getOne(id));
+			
 			return "redirect:/details/{id}";
+		}
 	}
-	}
-	
+
 	@DeleteMapping("/delete/{id}")
-	public String deleteRoom(@PathVariable("id")Long id) {
+	public String deleteRoom(@PathVariable("id") Long id) {
 		hService.delete(id);
-		return "redirect:/";
+		return "redirect:/room";
 	}
-	
+
 	@GetMapping("/myAccount")
 	public String myAccount(Model model, HttpSession session) {
-		if(session.getAttribute("userId")!= null) {
-			User user=uService.findById((Long)session.getAttribute("userId"));
+		if (session.getAttribute("userId") != null) {
+			User user = uService.findById((Long) session.getAttribute("userId"));
 			model.addAttribute("user", user);
-		return "/user/myAccount.jsp";
-	}
-	else {
-		return "redirect:/";
+			return "/user/myAccount.jsp";
+		} else {
+			return "redirect:/";
 //		
+		}
 	}
-	}
-	
+
 	@GetMapping("/reviews")
-	public String reviews(@ModelAttribute("PostAReview")Review review, Model model) {
-		model.addAttribute("writeReview", rService.getAll());
+	public String reviews(@ModelAttribute("PostAReview") Review review, Model model) {
+		model.addAttribute("write", rService.getAll());
 		return "/hotel/reviews.jsp";
 	}
-	
+
 	@PostMapping("/createReviews")
-	public String createReview(@Valid @ModelAttribute("PostAReview")Review review, BindingResult results, Model model) {
-		if(results.hasErrors()) {
-			return "/hotel/reviews.jsp";
+	public String createReview(@Valid @ModelAttribute("PostAReview") Review review, BindingResult results,
+			Model model) {
+		if (results.hasErrors()) {
+			model.addAttribute("write", rService.getAll());
+			return "/hotel/home.jsp";
 		}
+
 		model.addAttribute("writeReview", rService.createReview(review));
-		return "redirect:/reviews";
+		return "redirect:/";
 	}
 
 }
